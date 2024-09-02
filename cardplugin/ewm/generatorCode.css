@@ -1,0 +1,27 @@
+.ewm_part{position:fixed;width:85vw;height:8rem;left:50%;margin-top:-4rem;top:45%;margin-left:-42vw;}
+.ewm_part1{idisplay:inline-block;background:#f0f0f0;width:100%;padding-top:1vw;position:relative;}
+.ewm_part1_con{width:30vw;margin:auto;}
+.ewm_part1 a.icon_close{position:absolute;right:0.3rem;top:0;width:0.5rem;height:0.6rem;background:url(icon_close.png) no-repeat;background-size:0.5rem 0.6rem;} 
+.ewm_part1_con .pic{iwidth: 16vw; height: 17vw; border-radius: 1.32rem; ibackground: #fff; margin-top: 1vw; text-align: center;}
+.ewm_part1_con .pic img{width:16vw;height:16vw;border-radius:1.32rem;margin-top: -5vw}
+.ewm_part1_con .item-info p{text-align:center;color:#5d5d5d;font-size:0.36rem;}
+.line1{height:0.32rem;background:url(line11.png) no-repeat;background-size:100% 0.32rem;}
+.ewm_part2{display:inline-block;background:#fff;width:100%}
+.ewm_part2 h2{padding:0.05rem 0 0.15rem 0;text-align:center;font-weight:400;color:#7d7d7d;font-size:0.28rem}
+.ewm_part2 h2 b{font-weight:400;color:#12a9d4;margin-right:2px;font-size:0.28rem;}
+.ewm_part2 h3{text-align:center;imargin-bottom:0.15rem}
+.ewm_part2 h3 img{width: 35vh;;height:35vh;}
+.ewm_part2 h4{text-align:center;margin-bottom:0.1rem;font-weight:400;imargin-top: 5vw;font-size: 28px;}
+.ewm_part2 h4 a{display:inline-block;padding:0.06rem 0.18rem;border:0.02rem solid #31c2ec;border-radius:0.2rem;margin:0 0.04rem;color:#1fbdea;font-size:0.22rem;text-decoration: none;}
+.ewm_part2 h4 a.current{background:#10b8e7;color:#fff;border:0.02rem solid #10b8e7}
+.ewm_part2 h5{font-weight:400;margin-bottom:0.15rem;text-align:center;color:#5d5d5d;font-size:0.22rem;}
+.ewm_part3{idisplay:inline-block;width:100%;height:0.25rem;background:#12a9d4;margin-top: -8px;}
+
+.overlay { position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1997; }
+
+
+@media screen and (min-width: 450px) {
+    .ewm_part{width: 8rem;height: auto;margin-top: -5rem;margin-left: -4rem;}
+    .ewm_part1_con .pic{height: 2rem;margin-top: 0;}
+    .ewm_part1_con .pic img{width: 2rem;height: 2rem;margin-top: 0;}
+}

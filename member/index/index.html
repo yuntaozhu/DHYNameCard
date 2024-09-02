@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="zh" style="font-size: 52.0833px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>刘奇武 · 云名片</title>
+
+    <link rel="stylesheet" type="text/css" href="../../css/base.css?1.1">
+    <link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
+
+    <!-- cc视频的icon页面处理 -->
+    <link rel="stylesheet" type="text/css" href="../../cardplugin/common/common.css">
+
+    <script language="JavaScript" src="../../js/js.js"></script>
+    <script language="JavaScript" src="../../cardplugin/common/jquery-2.1.4-min.js"></script>
+
+    <!-- 留言 -->
+    <link rel="stylesheet" type="text/css" href="../../cardplugin/leavemessage/leavemessage.css">
+
+    <!--悬浮栏主要样式-->
+    <link rel="stylesheet" type="text/css" href="../../cardplugin/banners/banners.css" />
+
+    <!--二维码-->
+    <link rel="stylesheet" type="text/css" href="../../cardplugin/ewm/generatorCode.css" />
+
+    <!--做自己的名片-->
+    <link rel="stylesheet" type="text/css" href="../../cardplugin/shitbtn/swiper.min.css" />
+
+    <!--地图主要样式以及引用  判断信息内是否含有能够启动地图的信息才加载资源-->
+    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="https://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script src="https://webapi.amap.com/maps?v=1.4.3&key=ee0f8f7f30c1d691d7da396524c7a310&plugin=AMap.Autocomplete"></script>
+    <script type="text/javascript" src="../common/common/js/addToolbar.js"></script>
+    <script src="../common/common/js/geocoderToAddr.js"></script>
+
+    <!--名片加载...-->
+    <script type="text/javascript" >
+        var _LoadingHtml = '<div class="loading_part" style=""><div class="loading_part_con"> <p> <i><img src="../common/first/images/loading.gif" /></i> <span>Loading...</span></p></div> </div>';
+        document.write(_LoadingHtml);
+
+        //监听加载状态改变
+        document.onreadystatechange = completeLoading;
+
+        //加载状态为complete时移除loading效果
+        function completeLoading() {
+            if (document.readyState == "complete") {
+                $(".loading_part").fadeTo("slow",0.25,function(){
+                    $(".loading_part").hide();
+                });
+            }
+        }
+    </script>
+
+    <style>
+        .loading_part{position:fixed;left:0;top:0;width:100%;height:100%;background:#fff;z-index:998}
+        .loading_part_con{width:1.44rem;height:1.04rem;left:50%;position:fixed;margin-left:-0.72rem;top:50%;margin-top:-0.52rem}
+        .loading_part_con p{text-align:center;}
+        .loading_part_con p i img{width:1.2rem}
+        .loading_part_con p span{display:block;font-size:0.28rem;margin-top:0.35rem;color:#404040;font-family:"Microsoft Yahei"}
+
+        /* .contentBox	a.icon_video{position:absolute;width:0.88rem;height:0.66rem;left:50%;top:50%;margin-left:-0.44rem;margin-top:-0.43rem;background:url(../../image/icon_video.png) no-repeat;background-size:0.88rem 0.66rem;} */
+    </style>
+
+    <style>
+        .tp_4_section_1 {
+            font-size: 3.74vw;
+        }
+        .tp_4_section_1 .pimg{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
+            background: rgb(34,33,32);
+            z-index: -999;
+        }
+        .tp_4_section_1 .pimg img{
+            width: 100%;
+        }
+        .tp_4_section_1 .g-wrap {
+            /* width: 100%; */
+            /* height: 100%; */
+            /* margin: 0 auto; */
+            position: relative;
+        }
+        .tp_4_section_1 .g-wrap .contact {
+            background-color: rgba(0,0,0,.8);
+            overflow: hidden;
+            iposition: relative;
+            /* z-index: 2; */
+            color: #fff;
+            margin-top: 300px;
+        }
+        .tp_4_section_1 .g-wrap .contact ul {
+            margin-left: 2.8vw;
+            margin-top: 6vw;
+            padding-bottom: 2vw;
+        }
+
+        .tp_4_section_1 .g-wrap .contact ul li h1 {
+            line-height: 4.5vw;
+            margin-bottom: 4vw;
+        }
+        .tp_4_section_1 .g-wrap .contact ul li h1 span {
+            font-size: 6vw;
+        }
+        .tp_4_section_1 .g-wrap .contact ul li h1 span[class="font_small"] {
+            font-size: 4.2vw;
+            imargin-left: 3vw;
+            line-height: 1.4;
+        }
+        .tp_4_section_1 .g-wrap .contact ul li h1 span.front_special {
+            font-size: 4.2vw;
+            imargin-left: 3vw;
+            line-height: 1.4;
+        }
+        .tp_4_section_1 .g-wrap .contact ul li .mycard_box1_con{
+            font-size:4.5vw;
+        }
+        .tp_4_section_1 .g-wrap .contact ul li .mycard_box1_con dl dt{
+            margin:1.5vw 0px;
+        }
+        .tp_4_section_1 .g-wrap .contact ul li .mycard_box1_con dl dt strong {
+            position: absolute;
+        }
+        .tp_4_section_1 .g-wrap .contact ul li .mycard_box1_con dl dt strong i {
+            display: table-cell;
+            iheight: 7.5vw;
+            width: 3.8vw;
+        }
+        .tp_4_section_1 .mycard_box1_con dl dt strong i img {
+            height: 4.5vw;
+            line-height: 4.5vw;
+            margin-top: -1vw;
+            vertical-align: middle;
+        }
+        .tp_4_section_1 .g-wrap img {
+            max-width: 100%;
+        }
+        .tp_4_section_1 .mycard_box1_con dl dt span[class="mycard_member_info11_con_bt"] {
+            font-size: 4.2vw;
+            margin-left: 6vw;
+        }
+        .tp_4_section_1 .mycard_box1_con dl dt span {
+            font-size: 4.2vw;
+            line-height: 3vw;
+        }    .tp_4_section_2 {
+                 /*padding: 0 3.5vw;*/
+                 background-color: #eee;
+                 padding-top:.1vw;background-color: #eee;
+                 padding-bottom:6vw;
+             }
+        .tp_4_section_2 {font-size:3.74vw;}
+        .tp_4_section_2 .headBg{
+            border-radius: 2vw 2vw 0 0;
+            background: #fff;
+            height: 9.7vw;
+            color: #000;
+            text-align: center;
+            line-height: 9.7vw;
+            font-size: 5vw;
+            position: relative;
+        }
+        .new_eye{
+            background: url(../../image/logo.jpg) no-repeat;
+            background-size: 100% 100%;
+            width: 5.73vw;
+            height: 3.33vw;
+            position: absolute;
+            top: 50%;
+            right: 5vw;
+            margin-top: -1.66vw;
+        }
+        .tp_4_section_2 .contentBox{font-size: 4.2vw;color:#444;background-color: #eee;line-height: 1.8;imargin:0 2.77vw;}
+        .tp_4_section_2 .contentBox .content-style{  padding: 7px 0; line-height: 1.7;word-break: break-all;width: 100%;}
+
+        .tp_4_section_2 .contentBox img{max-width:100%;display:block;}
+        .tp_4_section_2 .contentBox video{width:100%;object-fit: cover;}.tpl_4_section_3 {font-size:3.74vw;    background-color: #eee;
+                                                                            padding-top: 1vw;}
+        .tpl_4_section_3 .linkBg {margin: 2.77vw 0;text-align: center;font-size:4vw;color:#333}
+        .tpl_4_section_3 .linkBox{font-size:3vw;imargin:0.3rem}
+        .tpl_4_section_3 .linkBox ul{margin: 0 2.77vw;display: flex;flex-wrap: wrap;}
+        /*.tpl_4_section_3 .linkBox ul li{width:25%;;margin-bottom: 2.8vw;}*/
+        /*.tpl_4_section_3 .linkBox ul li .box{border:0.47vw solid #FF7A03;margin: 0 auto;padding: 0.83vw;width: 20vw;height: 20vw; border-radius:50%;display: flex;justify-content: center;align-items: center;text-align: center;line-height: 1;}*/
+        .tpl_4_section_3 .footer-div {
+            padding-bottom: 1.4rem;
+            text-align: center;
+            font-size: 2vw;
+            color: #484848;
+            position: absolute;
+            width: 100%;
+            padding-top: 0.4rem;
+            /*background: linear-gradient(to top, #a3a5a4 0, #eee 100%);*/
+        }
+        .tpl_1_section_4 {
+            position: fixed;
+            z-index: 1100;
+            left: 0;
+            right: 0;
+            margin: auto;
+            font-family: Helvetica, Tahoma, Arial, Microsoft YaHei, sans-serif;
+        }
+        .top_menu {
+            display: -webkit-box;
+            display: -moz-box;
+            display: block;
+            width: 100%;
+            height: 15vw;
+            display: -webkit-box;
+            margin: 0;
+            padding: 0;
+            ipadding-top: 3px;
+            background: #1e1e1e;
+            color: #FFF;
+            border-top: 0.02rem solid #999999;
+        }
+        .tpl_1_section_4 .top_menu>li {
+            width: 25%;
+        }
+        .top_menu li:first-child {
+            background: none;
+        }
+        .tpl_1_section_4 .top_menu>li {
+            position: relative;
+            text-align: center;
+        }
+
+        ul, li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .tpl_1_section_4 li:first-child a {
+            display: block;
+        }
+        .tpl_1_section_4 .top_menu>li>a {
+            color: #adabab;
+            overflow: hidden;
+            font-size: 2.8vw;
+            display: block !important;
+            text-align: center;
+            /* line-height: 9vw; */
+        }
+        .tpl_1_section_4 .top_menu>li>a label {
+            overflow: hidden;
+            font-size: 2.8vw;
+            display: block !important;
+            line-height: 7vw;
+            text-align: center;
+        }
+        label {
+            cursor: default;
+        }
+
+        .tpl_1_section_4 .top_menu>li>a img {
+            margin-bottom: 0.5vw;
+            margin-top: 9px;
+            height: 5.1vw;
+            color: #adabab;
+            /* line-height: 49px; */
+        }</style></head><body><section id="tp_4_section_1" class="tp_4_section_1">
+    <!--个人背景照片-->
+    <div class="pimg">
+        <img id="bgImg" src="" width="100%">
+    </div>
+    <section class="g-wrap">
+        <div class="contact">
+            <!--基本信息-->
+            <div>
+                <ul>
+                    <li class="current">
+                        <h1>
+                            <span id="emp-name" class="my-fz4">刘奇武</span>
+
+                            <!--
+                                            <span class="font_small" data-id="emp-zw">
+                                                长沙市邵阳商会大商帮会长,执行会长,会员
+                                                执行会长
+
+                                            </span><em></em>
+                                 -->
+
+
+                        </h1>
+                        <div class="mycard_box1">
+                            <div class="mycard_box1_con">
+                                <dl>
+                                    <!-- 公司名称是否存在 -->
+                                    <dt>
+                                        <strong><i><img src="../../image/icon_gs.png"> </i> </strong>
+                                        <span class="mycard_member_info11_con_bt">公司：</span>
+                                        <span id="emp-comp">长沙东晖耀集团</span>
+                                    </dt>
+                                    <!-- 公司职务是否存在 -->
+                                    <dt>
+                                        <strong><i><img src="../../image/icon_zw.png"> </i> </strong>
+                                        <span class="mycard_member_info11_con_bt">职务：</span>
+                                        <span class="content" id="emp-zhiwei">董事长</span>
+                                    </dt>
+                                </dl>
+                                <!-- 公司性质是否存在 -->
+                                <dl>
+                                    <dt>
+                                        <strong><i><img src="../../image/icon_hy.png"> </i> </strong>
+                                        <span class="mycard_member_info11_con_bt">性质：</span>
+                                        <span class="content" id="emp-xz">民营</span>
+                                    </dt>
+                                </dl>
+                                <dl id="headMemberMobileDiv" >
+                                    <dt>
+                                        <strong><i><img src="../../image/icon_mobile.png"> </i> </strong>
+                                        <span class="mycard_member_info11_con_bt">手机：</span>
+                                        <span class="content" id="headMemberMobileSpan" onclick="telHeadPhone()"></span>
+                                    </dt>
+                                </dl>
+                                <dl>
+                                    <dt id="headCompanyPhoneDiv">
+                                        <strong><i><img src="../../image/icon_dh.png"> </i> </strong>
+                                        <span class="mycard_member_info11_con_bt">电话：</span>
+                                        <span class="content" id="emp-mobile" onclick="telHeadCompanyPhone()"><span id="headCompanyPhoneSpan"></span></span>
+                                    </dt>
+                                    <dt>
+                                        <strong><i><img src="../../image/icon_wz.png"> </i> </strong>
+                                        <span class="mycard_member_info11_con_bt">网址：</span>
+                                        <span class="content" id="emp-webset" >http://www.hunandonghuiyao.com/</span>
+                                    </dt>
+                                </dl>
+                                <dl>
+
+                                    <dt style="height: auto;"  id="emp-compInfo_dt" onclick="showHideInfo()">
+                                        <strong><i><img src="../../image/icon_gsjj.png"> </i> </strong>
+                                        <span class="mycard_member_info11_con_bt">介绍：</span>
+                                        <input id="emp_compInfoshow" hidden="hidden" value="湖南东晖耀建设有限公司（原“湖南省东晖园林工程有限公司”成立于2014年11月），具有资质类别及等级：施工总承包建筑工程贰级、专业承包建筑装修装饰工程贰级、施工总承包公路工程贰级、施工总承包水利水电工程贰级、施工总承包市政公用工程贰级、专业承包桥梁工程贰级、专业承包隧道工程贰级、专业承包钢结构工程贰级、专业承包公路路面工程贰级、专业承包公路路基工程贰级、专业承包河湖整治工程贰级、专业承包环保工程贰级；“路基路面养护乙级资质”、“桥梁养护乙级资质”、“交通安全设施养护资质”等。
+ "/>  <!-- 公司介绍 -->
+                                        <input id="emp_compInfohide" hidden="hidden" value="东晖耀集团是一家集投资、研发、..."/><!-- 公司介绍缩略的 -->
+                                        <span id="emp-compInfo">
+                          东晖耀集团是一家集投资、研发、...
+                      </span>
+                                    </dt>
+                                    <dt style="height: auto;" >
+                                        <strong><i><img src="../../image/icon_dz.png"> </i> </strong>
+                                        <span class="mycard_member_info11_con_bt">地址：</span>
+                                        <span id="emp-address" onclick="navigation('湖南省长沙市雨花区东塘街道金盆岭派出所星城旺座商厦','0','0')">
+                          湖南省长沙市雨花区东塘街道金盆岭...
+                      </span>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
+
+<!-- 个人信息需要使用的JS ( navigation 是公共js,可以不管 ) -->
+<script type="text/javascript" >
+    /**
+     * Created by 敏敏 on 2017/9/23.
+     */
+    /**
+     * 拨打电话
+     */
+    function calltell(mobile){
+        if(mobile){
+            location.href = "tel:"+mobile;
+        }
+    }
+    //基础信息网址跳转
+    $(function () {
+        $('#emp-webset').on('click',function () {
+            //window.open($('#emp-webset').text());
+            // $.ajax({
+            //   url: $('#emp-webset').text() ,
+            //   type: 'GET',
+            //   complete: function(response){
+            //     if(response.status == 404){
+            //       var r=confirm('该网址无效！是否跳转');
+            //       if(r){
+            //         window.location.href = $('#emp-webset').text();
+            //       }
+            //     }else{
+            //       window.location.href = $('#emp-webset').text();
+            //     }
+            //   }
+            // });
+        });
+    })
+
+
+    //基础信息公司信息展开 收缩
+    var compInfobz= 0;
+    function  showHideInfo() {
+        if(compInfobz == 1){
+            $("#emp-compInfo").text($('#emp_compInfohide').val());
+            compInfobz = 0;
+        }else if (compInfobz== 0){
+            $("#emp-compInfo").text($('#emp_compInfoshow').val());
+            compInfobz = 1;
+        }
+    }
+    //基础信息主营业务 展开 收缩
+    //emp_zhuying 缩略内容
+    //emp_zhuyingshow 完整内容
+    var zyywbz = 0;
+    function showHideZy(){
+        if(zyywbz == 1){
+            $("#emp-zhuy").text($('#emp_zhuyinghide').val());
+            zyywbz = 0;
+        }else if (zyywbz== 0){
+            $("#emp-zhuy").text($('#emp_zhuyingshow').val());
+            zyywbz = 1;
+        }
+    }
+</script>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <section id="646768cc-b323-432b-9a19-da7c11aae1d8" class="tp_4_section_2 pending_analysis" data-analysisid="646768cc-b323-432b-9a19-da7c11aae1d8" data-analysistype="5">
+    <div class="headBg">
+            <span style="display: inline-block;width: 70%;overflow: hidden;white-space: nowrap;">东晖耀集团介绍</span>
+    </div>
+
+    <!-- 遍历所有的图文信息 -->
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/-1569696671722829502704_720.png">
+        </a>
+    </div>
+    <!--<div class="contentBox">
+      <p>有兴趣的家长可以带孩子参加，请统一在杰妈（13975107298）报名，截止日期:明天下午上班前。如果人数多，主办方将预留专区给我们就坐。凡参加者均可获得南航赠送的精美礼物。</p>
+      <img src="../../image/honor.png">
+    </div>-->
+</section>
+<section id="e4cce4ba-0ebe-4512-9b7b-e3f9353459fc" class="tp_4_section_2 pending_analysis" data-analysisid="e4cce4ba-0ebe-4512-9b7b-e3f9353459fc" data-analysistype="5">
+    <div class="headBg">
+            <span style="display: inline-block;width: 70%;overflow: hidden;white-space: nowrap;">个 人 介 绍</span>
+    </div>
+
+    <!-- 遍历所有的图文信息 -->
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/21329741521722830327133_720.png">
+        </a>
+    </div>
+    <!--<div class="contentBox">
+      <p>有兴趣的家长可以带孩子参加，请统一在杰妈（13975107298）报名，截止日期:明天下午上班前。如果人数多，主办方将预留专区给我们就坐。凡参加者均可获得南航赠送的精美礼物。</p>
+      <img src="../../image/honor.png">
+    </div>-->
+</section>
+<section id="17bbc0aa-2e47-4284-897c-71bb5a6474f5" class="tp_4_section_2 pending_analysis" data-analysisid="17bbc0aa-2e47-4284-897c-71bb5a6474f5" data-analysistype="5">
+    <div class="headBg">
+            <span style="display: inline-block;width: 70%;overflow: hidden;white-space: nowrap;">东晖耀资质及荣誉</span>
+    </div>
+
+    <!-- 遍历所有的图文信息 -->
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="../../image/image1.png">
+        </a>
+    </div>
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="../../image/image2.jpg">
+        </a>
+    </div>
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="../../image/image3.jpg">
+        </a>
+    </div>
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="../../image/image4.png">
+        </a>
+    </div>
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/13084625061722910946599_720.png">
+        </a>
+    </div>
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/12540630511722910779453_720.png">
+        </a>
+    </div>
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/19391934371722911055109_720.png">
+        </a>
+    </div>
+    <!--<div class="contentBox">
+      <p>有兴趣的家长可以带孩子参加，请统一在杰妈（13975107298）报名，截止日期:明天下午上班前。如果人数多，主办方将预留专区给我们就坐。凡参加者均可获得南航赠送的精美礼物。</p>
+      <img src="../../image/honor.png">
+    </div>-->
+</section>
+<section id="7ad96055-59f7-4bef-af98-b734a32dea69" class="tp_4_section_2 pending_analysis" data-analysisid="7ad96055-59f7-4bef-af98-b734a32dea69" data-analysistype="5">
+    <div class="headBg">
+    </div>
+
+    <!-- 遍历所有的图文信息 -->
+    <div class="contentBox" style="position:relative;">
+        <div style="overflow: hidden;height: 220px;">
+            <iframe id="cciframe_BB560EC1EA671AA63F35109F9F77F2A8" src="https://p.bokecc.com/playhtml.bo?vid=BB560EC1EA671AA63F35109F9F77F2A8&siteid=5D8902B982D47D5E&autoStart=false&playerid=A6DA1A18E33E0F6C&playertype=1" frameborder="0" width="100%" height="220"></iframe>
+            <!-- <script src="https://p.bokecc.com/player?vid=BB560EC1EA671AA63F35109F9F77F2A8&siteid=5D8902B982D47D5E&autoStart=false&width=382&height=277&playerid=A6DA1A18E33E0F6C&playertype=1"></script>-->
+        </div>
+
+    </div>
+    <!--<div class="contentBox">
+      <p>有兴趣的家长可以带孩子参加，请统一在杰妈（13975107298）报名，截止日期:明天下午上班前。如果人数多，主办方将预留专区给我们就坐。凡参加者均可获得南航赠送的精美礼物。</p>
+      <img src="../../image/honor.png">
+    </div>-->
+</section>
+<section id="9f065e80-f694-41f1-8db6-e80e36807abe" class="tp_4_section_2 pending_analysis" data-analysisid="9f065e80-f694-41f1-8db6-e80e36807abe" data-analysistype="5">
+    <div class="headBg">
+            <span style="display: inline-block;width: 70%;overflow: hidden;white-space: nowrap;">建筑资质及证书</span>
+    </div>
+
+    <!-- 遍历所有的图文信息 -->
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/-16769562351659508630576_720.png">
+        </a>
+    </div>
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/-16722837931659508682094_720.png">
+        </a>
+    </div>
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/-16713826551659508691803_720.png">
+        </a>
+    </div>
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/-16482408091659508733208_720.png">
+        </a>
+    </div>
+    <!--<div class="contentBox">
+      <p>有兴趣的家长可以带孩子参加，请统一在杰妈（13975107298）报名，截止日期:明天下午上班前。如果人数多，主办方将预留专区给我们就坐。凡参加者均可获得南航赠送的精美礼物。</p>
+      <img src="../../image/honor.png">
+    </div>-->
+</section>
+<section id="d4cb5b9a-c52e-4f95-a9ca-3ac3d45a798b" class="tp_4_section_2 pending_analysis" data-analysisid="d4cb5b9a-c52e-4f95-a9ca-3ac3d45a798b" data-analysistype="5">
+    <div class="headBg">
+            <span style="display: inline-block;width: 70%;overflow: hidden;white-space: nowrap;">建筑资质展示</span>
+    </div>
+
+    <!-- 遍历所有的图文信息 -->
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/2942705931659495701992_720.png">
+        </a>
+    </div>
+    <!--<div class="contentBox">
+      <p>有兴趣的家长可以带孩子参加，请统一在杰妈（13975107298）报名，截止日期:明天下午上班前。如果人数多，主办方将预留专区给我们就坐。凡参加者均可获得南航赠送的精美礼物。</p>
+      <img src="../../image/honor.png">
+    </div>-->
+</section>
+<section id="cb995e6f-f71d-4f86-a67b-91f790e2213f" class="tp_4_section_2 pending_analysis" data-analysisid="cb995e6f-f71d-4f86-a67b-91f790e2213f" data-analysistype="5">
+    <div class="headBg">
+    </div>
+
+    <!-- 遍历所有的图文信息 -->
+    <div class="contentBox" style="position:relative;">
+        <div style="overflow: hidden;height: 220px;">
+            <iframe id="cciframe_03EC04CBEEFA729063835A29B2A11961" src="https://p.bokecc.com/playhtml.bo?vid=03EC04CBEEFA729063835A29B2A11961&siteid=5D8902B982D47D5E&autoStart=false&playerid=A6DA1A18E33E0F6C&playertype=1" frameborder="0" width="100%" height="220"></iframe>
+            <!-- <script src="https://p.bokecc.com/player?vid=03EC04CBEEFA729063835A29B2A11961&siteid=5D8902B982D47D5E&autoStart=false&width=382&height=277&playerid=A6DA1A18E33E0F6C&playertype=1"></script>-->
+        </div>
+
+    </div>
+    <!--<div class="contentBox">
+      <p>有兴趣的家长可以带孩子参加，请统一在杰妈（13975107298）报名，截止日期:明天下午上班前。如果人数多，主办方将预留专区给我们就坐。凡参加者均可获得南航赠送的精美礼物。</p>
+      <img src="../../image/honor.png">
+    </div>-->
+</section>
+<section id="3943b2ba-cb4b-4ddd-a110-e231228bc7f1" class="tp_4_section_2 pending_analysis" data-analysisid="3943b2ba-cb4b-4ddd-a110-e231228bc7f1" data-analysistype="5">
+    <div class="headBg">
+            <span style="display: inline-block;width: 70%;overflow: hidden;white-space: nowrap;">东晖耀资质及荣誉</span>
+    </div>
+
+    <!-- 遍历所有的图文信息 -->
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/11265647641659496528274_720.png">
+        </a>
+    </div>
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/18725956981659497042759_720.png">
+        </a>
+    </div>
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/-13372671911659498711413_720.png">
+        </a>
+    </div>
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/-13363139081659498722420_720.png">
+        </a>
+    </div>
+    <!--<div class="contentBox">
+      <p>有兴趣的家长可以带孩子参加，请统一在杰妈（13975107298）报名，截止日期:明天下午上班前。如果人数多，主办方将预留专区给我们就坐。凡参加者均可获得南航赠送的精美礼物。</p>
+      <img src="../../image/honor.png">
+    </div>-->
+</section>
+<section id="2c75b8f8-99ca-409f-a08f-4a52868db8b4" class="tp_4_section_2 pending_analysis" data-analysisid="2c75b8f8-99ca-409f-a08f-4a52868db8b4" data-analysistype="5">
+    <div class="headBg">
+            <span style="display: inline-block;width: 70%;overflow: hidden;white-space: nowrap;">施工图片展示及案例分享</span>
+    </div>
+
+    <!-- 遍历所有的图文信息 -->
+    <div class="contentBox">
+        <a href="javascript:void(0);">
+            <img style="width: 100%;" src="http://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/businesscard/pic/19852584051659497422000_720.png">
+        </a>
+    </div>
+    <!--<div class="contentBox">
+      <p>有兴趣的家长可以带孩子参加，请统一在杰妈（13975107298）报名，截止日期:明天下午上班前。如果人数多，主办方将预留专区给我们就坐。凡参加者均可获得南航赠送的精美礼物。</p>
+      <img src="../../image/honor.png">
+    </div>-->
+</section>
+<section id="tpl_4_section_3" class="tpl_4_section_3">
+    <div class="linkBg">
+        东晖耀新闻
+    </div>
+    <div class="linkBox">
+        <ul>
+            <li>
+                <!-- <a href="javascript:click_links('5b737a3a-6503-4c38-a333-273c73e00076','https://s.eqxiu.cn/s/HPJc9QVQ?bt=yxy');" class="column_name"> -->
+                <a href="https://s.eqxiu.cn/s/HPJc9QVQ?bt=yxy" class="column_name">
+                    <div class="box">
+                        东晖耀慈善捐款
+                    </div>
+                </a>
+            </li>
+            <li>
+                <!-- <a href="javascript:click_links('ed1d02e5-410a-426d-b752-4874696290f9','http://www.sohu.com/a/310508692_784191');" class="column_name"> -->
+                <a href="http://www.sohu.com/a/310508692_784191" class="column_name">
+                    <div class="box">
+                        东晖耀政府活动
+                    </div>
+                </a>
+            </li>
+            <li>
+                <!-- <a href="javascript:click_links('e4662dd7-6592-450c-a9ac-9d7c633df531','http://www.cbjt.net/');" class="column_name"> -->
+                <a href="http://www.cbjt.net/" class="column_name">
+                    <div class="box">
+                        东晖耀新闻3
+                    </div>
+                </a>
+            </li>
+            <li>
+                <!-- <a href="javascript:click_links('590a32fd-fb11-4a3e-be26-1e71b306502f','https://mp.weixin.qq.com/s/vsbShqrOUQsbQqfWCr7FOQ');" class="column_name"> -->
+                <a href="https://mp.weixin.qq.com/s/vsbShqrOUQsbQqfWCr7FOQ" class="column_name">
+                    <div class="box">
+                        东晖耀新闻4
+                    </div>
+                </a>
+            </li>
+            <li>
+                <!-- <a href="javascript:click_links('e5388732-d7f3-47ad-8526-7589a572c72e','http://www.shaoshangwang.org/plus/view.php?aid=517');" class="column_name"> -->
+                <a href="http://www.shaoshangwang.org/plus/view.php?aid=517" class="column_name">
+                    <div class="box">
+                        东晖耀新闻5
+                    </div>
+                </a>
+            </li>
+            <li>
+                <!-- <a href="javascript:click_links('af5c5552-94d0-4770-9902-1c704fdc7fec','http://www.icswb.com/h/161/20170701/479943.html');" class="column_name"> -->
+                <a href="http://www.icswb.com/h/161/20170701/479943.html" class="column_name">
+                    <div class="box">
+                        东晖耀新闻6
+                    </div>
+                </a>
+            </li>
+            <!-- <li><a href=""><div class="box">企业官网</div></a></li> -->
+        </ul>
+    </div>
+    <div class="footer-div">
+        <span>技术支持:湖南东晖耀科技有限公司</span>
+    </div>
+</section>                                    <style>
+    .tpl_4_section_3 .linkBox ul li{width:35%;;margin-bottom: 2.8vw;}
+    .tpl_4_section_3 .linkBox ul li .box{border:0.47vw solid #FF7A03;margin: 0 auto;padding: 0.83vw;width: 20vw;height: 20vw; border-radius:50%;display: flex;justify-content: center;align-items: center;text-align: center;line-height: 1;}
+    .tpl_4_section_3 .footer-div {
+        padding-bottom: 1.4rem;
+        text-align: center;
+        font-size: 2vw;
+        color: #484848;
+        position: absolute;
+        width: 100%;
+        padding-top: 0.4rem;
+        background: linear-gradient(to top, #a3a5a4 0, #eee 100%);
+    }
+    .touch_href_fuk{
+        background-color: rgba(0,0,0,0.6);
+        position: fixed;
+        top: 0%;
+        left: 0;
+        width: 100%;
+        height: 90%;
+        z-index: 99999;
+        display: none;
+    }
+    .touch_href_fuk span{
+        display: block;
+        height: 10%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.6);
+        background-image: url(../../cardplugin/banners/images/test.png);
+        background-size: 10.27vw 10.27vw;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+    .touch_href_fuk iframe{
+        display: none;
+        height: 90%;
+        width: 100%;
+    }
+</style>
+
+<div style="display:inline-block;width:100%;height:1.12rem;"></div>
+<section class="tpl_1_section_4" style="bottom: 0;">
+    <nav>
+        <ul class="top_menu">
+            <li>
+                <a onclick="javascript:telPhone()"><img src="../../image/foot_ico2.png" /> <label>给我电话</label></a>
+                <input type="hidden" id="telMemberMobile" />
+            </li>
+            <li><a href="javascript:leaveMessage()"><img src="../../image/foot_ico8.png" /><label>给我留言</label></a></li>
+            <li><a class="ui_pr" href="javascript:showewm()" id="ewmbtn"><img src="../../image/changeCard.png" /><label>名片二维码</label> </a> </li>
+            <li><a href="javascript:showsharebtn()" id="sharebtn"><img src="../../image/copyStyle.png" /><label>分享</label></a> </li>
+        </ul>
+    </nav>
+</section>
+<div class="touch_href_fuk">
+    <span></span>
+    <iframe src=""></iframe>
+</div>                    <!-- 会员联系信息以及公司信息 -->
+<input type="hidden" id="headMemberMobile" />
+<input type="hidden" id="headCompanyPhone" />
+
+
+
+<input id="mem_name" hidden="hidden" value="刘奇武"/>		<!-- 二维码分享的名称 -->
+<input id="mem_mobile" hidden="hidden" value=""/>					<!-- mobile 二维码分享的手机号，信息关闭 -->
+
+<input id="isPreview" hidden="hidden" value="false"/>				<!-- 当前是否是预览（true :预览 false:发布） -->
+<input id="isPerson" hidden="hidden" value="0"/>					<!-- 当前是否是个人名片（0 会员：1：企业） -->
+
+<input id="bbgcardDomain" hidden="hidden" value="https://card.zhdsbang.com/bbgcard/"/>		<!-- bbgcard domain -->
+<input id="bbgDomain" hidden="hidden" value="https://bbg.zhdsbang.com/"/>			<!-- bbg domain -->
+<input id="tomemberid" hidden="hidden" value="17a85ee0-878f-4224-922e-b5fbd8b6e03b"/>				<!-- 当前名片的主人ID -->
+
+<input id="mem_logo" hidden="hidden" value="../image/liuzong.jpg"/>	<!-- member_logo720 info -->
+<input id="mem_logo60" hidden="hidden" value="../image/liuzong.jpg"/>	<!-- member_logo60 info -->
+<input id="mem_logo360" hidden="hidden" value="../image/liuzong.jpg"/>	<!-- member_logo360 info -->
+
+<!--<input id="mem_logo" hidden="hidden" value="
+	http://dsbprod.oss-cn-hangzhou.aliyuncs.com/atta/funcompspacemumber/pic/17337576891664634852934_720.png"/	 member_logo720 info
+<input id="mem_logo60" hidden="hidden" value="
+	http://dsbprod.oss-cn-hangzhou.aliyuncs.com/atta/funcompspacemumber/pic/17337576891664634852934_60.png"/	member_logo60 info
+<input id="mem_logo360" hidden="hidden" value="
+	http://dsbprod.oss-cn-hangzhou.aliyuncs.com/atta/funcompspacemumber/pic/17337576891664634852934_360.png"/	 member_logo360 info -->
+
+<input id="mem_ewm_logo" hidden="hidden" value="
+	https://dsbcardprod.oss-cn-hangzhou.aliyuncs.com/atta/funcompspacemumber/pic/-17199250361557049591233_360.png"/>	<!-- member_ewm info -->
+
+<input id="shareInfo" hidden="hidden" value="
+	东晖耀集团
+	董事长
+	湖南东晖耀有限公司
+	董事长
+	湖南引客软件科技有限公司
+	执行董事 ..."/>				<!-- shareInfo -->
+
+<!-- 商会LOGO 商会ID为input-id,值就是 logo 信息 -->
+<input id="" hidden="hidden"
+       src="../../image/logo.jpg"/>
+</body>
+<!--分享-->	<!-- 微信内导航 -->
+<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript" src="../../js/common/wechat_config.js"></script>
+<script type="text/javascript" src="../../cardplugin/share/share.js"></script>
+
+<script src="../../js/common/jquery.i18n.js" type="text/javascript" ></script>
+
+<!-- 导航 -->
+<script src='../../cardplugin/common/daohang.js' type="text/javascript"></script>
+
+<!-- 日志记录处理 -->
+<script language="JavaScript" src="../../cardplugin/logutils/impact.js"></script>
+<script language="JavaScript" src="../../cardplugin/logutils/logrecord.js"></script>
+
+<!-- 留言 -->
+<script type="text/javascript" src="../../cardplugin/leavemessage/leavemessage.js"></script>
+
+<!--做我的名片-->
+<script src="../../cardplugin/shitbtn/swiper.min.js"></script>
+<script src='../../cardplugin/shitbtn/swipe.custom.js'></script>
+
+<!--二维码-->
+<script type="text/javascript" src="../../cardplugin/ewm/jquery.qrcode.min.js"></script>
+<script  type="text/javascript" src="../../cardplugin/ewm/generatorCode.js"></script>
+
+<!--悬浮栏主要样式-->
+<script  type="text/javascript" src="../../cardplugin/banners/banners.js?v=0.01"></script>
+
+<!-- layui 框架-->
+<script type="text/javascript" src="../../cardplugin/common/layui.all.js" charset="utf-8"></script>
+
+<script type="text/javascript" >
+
+    /* 	window.setTimeout(function(){
+            var ccvids=document.getElementsByName("ccvids");
+            for(var i=0;i<ccvids.length;i++){
+                var ccid = $(ccvids[i]).val();
+                var thid = $(ccvids[i]).attr('id');
+                var parentobj = document.getElementById(thid).parentNode;
+                var script = document.createElement('script');
+                script.setAttribute('type', 'text/javascript');
+                //script.src = 'https://p.bokecc.com/player?vid='+ccid+'&siteid=5D8902B982D47D5E&autoStart=false&width='+parentobj.offsetWidth+'&height='+parentobj.offsetHeight+'&playerid=A6DA1A18E33E0F6C&playertype=1';
+                script.src = 'https://p.bokecc.com/player?vid='+ccid+'&siteid=5D8902B982D47D5E&autoStart=false&width=100%&height=220px&playerid=A6DA1A18E33E0F6C&playertype=1';
+                document.getElementById(thid).parentNode.appendChild(script);
+            }
+        },1000); */
+    $(document).ready(function(){
+        //页面加载的时候---隐藏公司电话和个人电话小模块信息
+        $("#headMemberMobileDiv").hide() ;
+        $("#headCompanyPhoneDiv").hide() ;
+        //if(isWeiXin()){
+        //在微信中打开
+        var storage = window.sessionStorage;
+        var openid = storage.getItem("openid");
+        var DSBopenid = storage.getItem("DSBopenid");
+        var memberid = $("#tomemberid").val() ;
+        console.info("当前使用人的openid:" + DSBopenid ) ;
+        //AJAX 请求数据获取权限信息
+        var params = getLogBasicParam() ;
+        params.bcmuiid = memberid  ;//浏览用户云名片主键
+        if( isNUll( DSBopenid ) ){
+            params.DSBopenid = 'undefind' ;
+        }else{
+            params.DSBopenid = DSBopenid  ;//浏览用户openid
+        }
+        var param = {'inmap':params};
+        console.log(param);
+        $.ajax({
+            type: 'POST',
+            url: $("#bbgcardDomain").val()+ 'httpServices/users/memberController/getCardMemberMobile.form',
+            contentType: 'application/json;charset=utf-8',
+            data: JSON.stringify(param),
+            dataType: 'json',
+            beforeSend: function () {
+            },
+            success: function (data) {
+                console.log(data);
+                if (data.returncode == "true") {
+                    if (data.outmap) {
+                        $("#telMemberMobile").val( data.outmap.cardMembemobile ) ;		//左下角拨打电话
+                        if(! isNUll( data.outmap.cardMembemobile ) && !isNUll( data.outmap.cardCompanyPhone ) &&
+                            (data.outmap.cardCompanyPhone == data.outmap.cardMembemobile) ){
+                            var myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(17[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(19[0-9]{1}))+\d{8})$/;
+                            //校验未通过则置于提示信息
+                            if( myreg.test( data.outmap.cardCompanyPhone ) ){
+                                $("#headMemberMobile").val( data.outmap.cardMembemobile ) ;		//头部的个人联系人电话显示值
+                                $("#headMemberMobileDiv").show() ;									//headMemberMobileDiv 这个ID必须有
+                                $("#headMemberMobileSpan").text( data.outmap.cardMembemobile ) ;	//headMemberMobileSpan 这个ID必须有
+                            }else{
+                                $("#headCompanyPhone").val( data.outmap.cardCompanyPhone ) ;	//头部的公司电话显示值
+                                $("#headCompanyPhoneDiv").show() ;									//headCompanyPhoneDiv 这个ID必须有
+                                $("#headCompanyPhoneSpan").text( data.outmap.cardCompanyPhone ) ;	//headCompanyPhoneSpan 这个ID必须有
+                            }
+                        }else{
+                            if(! isNUll( data.outmap.cardMembemobile )  ){
+                                $("#headMemberMobile").val( data.outmap.cardMembemobile ) ;		//头部的个人联系人电话显示值
+                                $("#headMemberMobileDiv").show() ;									//headMemberMobileDiv 这个ID必须有
+                                $("#headMemberMobileSpan").text( data.outmap.cardMembemobile ) ;	//headMemberMobileSpan 这个ID必须有
+                            }
+                            if(! isNUll( data.outmap.cardCompanyPhone )  ){
+                                $("#headCompanyPhone").val( data.outmap.cardCompanyPhone ) ;	//头部的公司电话显示值
+                                $("#headCompanyPhoneDiv").show() ;									//headCompanyPhoneDiv 这个ID必须有
+                                $("#headCompanyPhoneSpan").text( data.outmap.cardCompanyPhone ) ;	//headCompanyPhoneSpan 这个ID必须有
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        //telMemberMobile			工具栏的手机号码需要放入的位置
+        //headMemberMobile			个人信息手机号码需要放入的位置
+        //headCompanyPhone			个人信息公司信息需要放入的位置
+        //} else {
+        //否则就是PC浏览器打开
+        //    console.info("非微信浏览器操作.") ;
+        //}
+    });
+
+    //判断变量是否有值
+    function isNUll( reValue ){
+        if (typeof(reValue) == "undefined" || reValue== null || reValue.length == 0 ) {
+            return true ;
+        }else{
+            return false ;
+        }
+    }
+
+    //拨打工具栏电话的公共方法
+    function telPhone(){
+        /* var memberMobile = $("#telMemberMobile").val() ;
+        //判断手机号码是否存在
+        if( isNUll( memberMobile ) ){
+            layer.msg('名片主人未开放您获取电话的权限.');
+        }else{
+            window.location.href = 'tel://' + memberMobile ;
+        } */
+        telCommonPhone( "telMemberMobile","个人电话" ) ;
+    }
+
+    //拨打个人信息电话的公共方法
+    function telHeadPhone(){
+        telCommonPhone( "headMemberMobile","个人电话" ) ;
+    }
+
+    //拨打个人信息公司电话的公共方法
+    function telHeadCompanyPhone(){
+        telCommonPhone( "headCompanyPhone","公司电话" ) ;
+    }
+
+    //拨打电话信息
+    function telCommonPhone( id , info ){
+        if(browserRedirect()){
+            var mobileInfo = $("#" + id ).val() ;
+            //判断手机号码是否存在
+            if( isNUll( mobileInfo ) ){
+                layer.msg('名片主人未开放您获取电话的权限.');
+            }else{
+                var u = navigator.userAgent;
+                if(u.indexOf('MediaPad') >-1||u.indexOf('iPad') > -1){
+                    window.location.href = 'tel:' + mobileInfo ;
+                }else{
+                    window.location.href = 'tel:' + mobileInfo ;
+                }
+                writeLoggers('',8,new Date(),'') ;	//记录日志
+            }
+        }else{
+            layer.msg('暂不支持您的浏览器拨打电话.');
+        }
+    }
+
+    //判断当前使用端的平台信息
+    function browserRedirect() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+        var browserInfo = "您的浏览设备为：";
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            browserInfo += "phone" ;
+            console.info( browserInfo );
+            return true ;
+        } else {
+            browserInfo += "pc" ;
+            console.info( browserInfo );
+            return false ;
+        }
+    }
+
+    //链接点击事件
+    function click_links(refBciuiid,refLinkStr) {
+        writeLoggers(refBciuiid,6,new Date(),'');
+        location.href = refLinkStr;
+    }
+</script>
+
+
+<!-- 地图组件 -->
+<script type="text/javascript" >
+    var map ;
+    var marker ;
+    var infoWindow;
+    //加载地图
+    $(document).ready(function(){
+        mapInitLoad(  0,0 );
+        dataDraw( 0,0 );
+    });
+
+    //地图初始化
+    function  mapInitLoad( lat , lng){
+        //alert( lat ) ;
+        //默认加载以当前已经配置好的城市为初始展现页面
+        map = new AMap.Map('container', {
+            resizeEnable: true,
+            zoom:15,
+            center: [ lat ,lng ]
+        });
+
+        map.plugin(["AMap.ToolBar"],function(){
+            toolBar = new AMap.ToolBar(); //设置地位标记为自定义标记
+            map.addControl(toolBar);
+        });
+
+        //为地图注册click事件获取鼠标点击出的经纬度坐标
+        var clickEventListener=AMap.event.addListener(map,'click',function(e){
+            var x=e.lnglat.getLng();
+            var y=e.lnglat.getLat();
+            dataDraw( x , y ) ;
+        });
+
+        //指定输入信息查找
+        var auto = new AMap.Autocomplete({
+            input: "tipinput"
+        });
+        AMap.event.addListener(auto, "select", select);//注册监听，当选中某条记录时会触发
+        function select(e) {
+            if (e.poi && e.poi.location) {
+                map.setZoom(15);
+                map.setCenter(e.poi.location);			//以选中地址为当前地图屏幕中心
+                dataDraw( e.poi.location.lng , e.poi.location.lat ) ;
+            }
+        }
+    }
+
+    //将选中的信息添加到地图上
+    function dataDraw( x , y ){
+        //移除添加图标
+        removeMarker() ;
+        addMarker( x , y ) ;
+        //反向根据经纬度获取地址信息
+        geocoder( x , y ) ;
+        setTimeout( function(){
+            //延时执行地址数据的显示，因为网络获取经纬度转换地址需要时间 1000 ms
+            //移除添加弹出信息
+            removeInfo() ;
+            openInfo( x , y ) ;
+        }, 1000 );
+    }
+
+    // 实例化点标记
+    function addMarker( Lng , Lat ) {
+        marker = new AMap.Marker({
+            icon: "https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+            draggable : true ,
+            position: [ Lng , Lat ]
+        });
+        marker.setMap( map );
+        //给标记点添加移动结束事件   ---pc dragend ; mobile touchend  ;参数替换
+        AMap.event.addListener( marker,'dragend',markerDrag );
+    }
+
+    //移动结束后的操作
+    function markerDrag(){
+        var latlng = marker.getPosition( ) ;
+        //alert( latlng.lng ) ;
+        ///将新的经纬度加入到隐藏的文本框
+        document.getElementById("txtCoordinate").value= latlng.lng+","+latlng.lat;
+        //反向根据经纬度获取地址信息
+        geocoder( latlng.lng , latlng.lat ) ;
+        setTimeout( function(){
+            //延时执行地址数据的显示，因为网络获取经纬度转换地址需要时间 1000 ms
+            //移除添加弹出信息
+            removeInfo() ;
+            openInfo( latlng.lng , latlng.lat ) ;
+        }, 1000 );
+    }
+
+    // 溢出实例化标记
+    function removeMarker(  ) {
+        if (marker) {
+            marker.setMap(null);
+            marker = null;
+        }
+    }
+
+    //弹出显示框
+    function openInfo( Lng , Lat ) {
+        //构建信息窗体中显示的内容
+        var info = [];
+        info.push("<div><div>");
+        //info.push("经纬度 :" + $("#txtCoordinate").val() );
+        //info.push("地址 :北京市朝阳区望京阜荣街10号首开广场4层</div></div>");
+        //info.push("<img style=\"float:left;\" src=\" http://webapi.amap.com/images/autonavi.png \"/>" );
+        info.push("地址 :" + $("#lnglatAddr").val() + "</div></div>");
+        infoWindow = new AMap.InfoWindow({
+            content: info.join("") //info.join("<br/>")  //使用默认信息窗体框样式，显示信息内容
+        });
+        infoWindow.open(map, [ Lng , Lat ] );
+    }
+
+    // 关闭显示框
+    function removeInfo() {
+        if (infoWindow) {
+            infoWindow.close() ;
+        }
+        //下面是清除，更高级
+        //map.clearInfoWindow();
+    }
+
+
+</script >
+<!-- 地图组件 -->
+</html>

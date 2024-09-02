@@ -1,0 +1,40 @@
+input[type=button],input[type=submit],input[type=reset]{-webkit-appearance:none}
+textarea{-webkit-appearance:none}
+.button{border-radius:0}
+a,button,input,textarea{-webkit-tap-highlight-color:transparent}
+a{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none}
+ul{list-style:none}
+a{text-decoration:none;outline:0;color:#3c3c3c}
+img{border:none;vertical-align:middle;background-size:100%}
+input,textarea{background:0 0;border:none}
+:focus{outline:0}
+textarea{resize:none}
+a,b,body,dl,dt,em,h1,h2,h3,h4,h5,h6,html,i,img,input,li,ol,p,s,section,span,strong,textarea,ul,div{padding:0;margin:0;}
+*,*:before,*:after{ -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+table{border-collapse:collapse;border-spacing:0;}
+ubody,uhtml{position:relative;height:100%;font:44.4444px/1.5 "MicroSoft YaHei","SimHei",arial,\5b8b\4f53,sans-serif;-webkit-text-size-adjust:none!important}
+body{background:#f1f1f1}
+.m0a{margin:0 auto;}
+.fl {	float:left}
+.fr {	float:right}
+.tc {	text-align:center;}
+.tr {	text-align:right;}
+.tl {	text-align:left;}
+.vm {	vertical-align:middle;}
+.vt {	vertical-align:top;}
+.pr {	position:relative;}
+.abs, .pa {	position:absolute;}
+.pf{position:fixed;}
+.dn {	display:none;}
+.db {	display:block;}
+.dib {	-moz-inline-stack:inline-block;	display:inline-block;}
+.di {	display:inline;}
+.ovh {	overflow:hidden;}
+.ovs {	overflow:scroll;}
+.vh {	visibility:hidden;}
+.vv {	visibility:visible;}
+.zi9{z-index:-999}
+.vat{vertical-align:top}
+.tooLong{white-space: nowrap;display: inline-block;text-overflow: ellipsis;overflow: hidden;}
+.fix {*zoom:1;}
+.fix:after, .fix:before {display:block;	content:"clear";height:0;clear:both;overflow:hidden;visibility:hidden;}

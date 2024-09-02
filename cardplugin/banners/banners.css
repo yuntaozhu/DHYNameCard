@@ -1,0 +1,111 @@
+	/*.banner-preview{
+	    width: 100%;
+	    height: 40px;
+	    position: absolute;
+	    top: 0;
+	    ibackground-color: rgba(0, 0, 0, 0.64);
+	    z-index: 999;
+	}*/
+	.banner-publish{
+	    width: 100%;
+	    height: 40px;
+	    position: fixed;
+	    /*background-color: rgba(0, 0, 0, 0.64);*/
+	    z-index: 999;
+	    top: 0;
+	}
+	.banner-preview p,.banner-preview img,.banner-publish p,.banner-publish img{
+		color: #fff;
+	    line-height: 36px;
+	    position: absolute;
+	}
+	.banner-publish p{
+		font-size: 15px;
+	    color: white;
+	    background-color: rgba(84, 84, 84, 0.72);
+	    height: 26px;
+	    top: 7px;
+	    line-height: 27px;
+	    border-radius: 15px;
+	}
+	/*.banner-preview img{
+		 height: 19px;
+		 top: 10px;	
+	}*/
+	.banner-publish img{
+		 height: 26px;
+		 top: 10px;	
+	}
+	.banner-publish .p1{
+		right:  8px;
+	    padding: 0 25px 0 25px;
+	    background-color: rgba(82, 158, 210, 0.72);
+	}
+	.banner-publish .p2{
+		right:100px;
+	    padding: 0 10px 0 10px;
+	}
+	.banner-publish .pub-back{   
+    	left: 17px;
+	}
+	.banner-publish .pub-collection{   
+		right: 60px;
+		/*right: 61%;*/
+	}
+	.banner-publish .pub-addfriend{   
+    	right: 100px;
+    	/*right: 33%;*/
+	}
+	.banner-publish .pub-cancel{   
+    	right: 20px;
+		animation:swinging 8s ease-in-out 2s infinite;
+		transform-origin: 50% 50%;
+	}
+	.banner-publish .editp{
+		left: 10px;
+		padding: 0 10px 0 10px;
+	}
+
+	.banner-publish .left-icon{
+		height: 40px;
+	}
+
+	.banner-publish .left-icon p{
+		animation: anima-pointer-left 1.5s infinite;
+		margin-left: 90px;
+		/* height: 8vw; */
+		width: 12vw;
+		background: url(images/point_left.png) no-repeat;
+		top: 10px;
+		position: absolute;
+		background-size: 20px;
+	}
+
+
+	@keyframes anima-pointer-left
+	{
+		0%   {opacity:0;left:20px}
+		100%  {opacity:1;left:0px;}
+	}
+
+	.banner-publish .design_logo{
+		width: 25px;
+		height: 25px;
+		right: 10px;
+		border-radius: 50%;
+		top: 8px;
+	}
+	.banner-publish .design_name{
+		right: 40px;
+		background:none;
+	}
+
+	@-webkit-keyframes swinging{
+  0% { -webkit-transform: rotate(0deg) scale(1);}
+   10% { -webkit-transform: rotate(-20deg) scale(1.3);}
+   20% { -webkit-transform: rotate(20deg) scale(1.1);}
+   30% { -webkit-transform: rotate(-20deg) scale(1.3); }
+   40% { -webkit-transform: rotate(20deg) scale(1.1);}
+   50% { -webkit-transform: rotate(0deg) scale(1); }
+   100% { -webkit-transform: rotate(0deg); }
+}
