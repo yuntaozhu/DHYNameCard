@@ -5,39 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>刘奇武 · 云名片</title>
+    <title>刘奇武 · 东晖耀</title>
 
-    <link rel="stylesheet" type="text/css" href="../../css/base.css?1.1">
-    <link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css?1.1">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 
     <!-- cc视频的icon页面处理 -->
-    <link rel="stylesheet" type="text/css" href="../../cardplugin/common/common.css">
+    <link rel="stylesheet" type="text/css" href="cardplugin/common/common.css">
 
-    <script language="JavaScript" src="../../js/js.js"></script>
-    <script language="JavaScript" src="../../cardplugin/common/jquery-2.1.4-min.js"></script>
+    <script language="JavaScript" src="js/js.js"></script>
+    <script language="JavaScript" src="cardplugin/common/jquery-2.1.4-min.js"></script>
 
     <!-- 留言 -->
-    <link rel="stylesheet" type="text/css" href="../../cardplugin/leavemessage/leavemessage.css">
+    <link rel="stylesheet" type="text/css" href="cardplugin/leavemessage/leavemessage.css">
 
     <!--悬浮栏主要样式-->
-    <link rel="stylesheet" type="text/css" href="../../cardplugin/banners/banners.css" />
+    <link rel="stylesheet" type="text/css" href="cardplugin/banners/banners.css" />
 
     <!--二维码-->
-    <link rel="stylesheet" type="text/css" href="../../cardplugin/ewm/generatorCode.css" />
+    <link rel="stylesheet" type="text/css" href="cardplugin/ewm/generatorCode.css" />
 
     <!--做自己的名片-->
-    <link rel="stylesheet" type="text/css" href="../../cardplugin/shitbtn/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="cardplugin/shitbtn/swiper.min.css" />
 
     <!--地图主要样式以及引用  判断信息内是否含有能够启动地图的信息才加载资源-->
     <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
     <script src="https://cache.amap.com/lbs/static/es5.min.js"></script>
     <script src="https://webapi.amap.com/maps?v=1.4.3&key=ee0f8f7f30c1d691d7da396524c7a310&plugin=AMap.Autocomplete"></script>
-    <script type="text/javascript" src="../common/common/js/addToolbar.js"></script>
-    <script src="../common/common/js/geocoderToAddr.js"></script>
+    <script type="text/javascript" src="common/common/js/addToolbar.js"></script>
+    <script src="common/common/js/geocoderToAddr.js"></script>
 
     <!--名片加载...-->
     <script type="text/javascript" >
-        var _LoadingHtml = '<div class="loading_part" style=""><div class="loading_part_con"> <p> <i><img src="../common/first/images/loading.gif" /></i> <span>Loading...</span></p></div> </div>';
+        var _LoadingHtml = '<div class="loading_part" style=""><div class="loading_part_con"> <p> <i><img src="common/first/images/loading.gif" /></i> <span>Loading...</span></p></div> </div>';
         document.write(_LoadingHtml);
 
         //监听加载状态改变
@@ -167,7 +167,7 @@
             position: relative;
         }
         .new_eye{
-            background: url(../../image/logo.jpg) no-repeat;
+            background: url(image/logo.jpg) no-repeat;
             background-size: 100% 100%;
             width: 5.73vw;
             height: 3.33vw;
@@ -292,13 +292,13 @@
                                 <dl>
                                     <!-- 公司名称是否存在 -->
                                     <dt>
-                                        <strong><i><img src="../../image/icon_gs.png"> </i> </strong>
+                                        <strong><i><img src="image/icon_gs.png"> </i> </strong>
                                         <span class="mycard_member_info11_con_bt">公司：</span>
                                         <span id="emp-comp">长沙东晖耀集团</span>
                                     </dt>
                                     <!-- 公司职务是否存在 -->
                                     <dt>
-                                        <strong><i><img src="../../image/icon_zw.png"> </i> </strong>
+                                        <strong><i><img src="image/icon_zw.png"> </i> </strong>
                                         <span class="mycard_member_info11_con_bt">职务：</span>
                                         <span class="content" id="emp-zhiwei">董事长</span>
                                     </dt>
@@ -306,26 +306,26 @@
                                 <!-- 公司性质是否存在 -->
                                 <dl>
                                     <dt>
-                                        <strong><i><img src="../../image/icon_hy.png"> </i> </strong>
+                                        <strong><i><img src="image/icon_hy.png"> </i> </strong>
                                         <span class="mycard_member_info11_con_bt">性质：</span>
                                         <span class="content" id="emp-xz">民营</span>
                                     </dt>
                                 </dl>
                                 <dl id="headMemberMobileDiv" >
                                     <dt>
-                                        <strong><i><img src="../../image/icon_mobile.png"> </i> </strong>
+                                        <strong><i><img src="image/icon_mobile.png"> </i> </strong>
                                         <span class="mycard_member_info11_con_bt">手机：</span>
                                         <span class="content" id="headMemberMobileSpan" onclick="telHeadPhone()"></span>
                                     </dt>
                                 </dl>
                                 <dl>
                                     <dt id="headCompanyPhoneDiv">
-                                        <strong><i><img src="../../image/icon_dh.png"> </i> </strong>
+                                        <strong><i><img src="image/icon_dh.png"> </i> </strong>
                                         <span class="mycard_member_info11_con_bt">电话：</span>
                                         <span class="content" id="emp-mobile" onclick="telHeadCompanyPhone()"><span id="headCompanyPhoneSpan"></span></span>
                                     </dt>
                                     <dt>
-                                        <strong><i><img src="../../image/icon_wz.png"> </i> </strong>
+                                        <strong><i><img src="image/icon_wz.png"> </i> </strong>
                                         <span class="mycard_member_info11_con_bt">网址：</span>
                                         <span class="content" id="emp-webset" >http://www.hunandonghuiyao.com/</span>
                                     </dt>
@@ -333,7 +333,7 @@
                                 <dl>
 
                                     <dt style="height: auto;"  id="emp-compInfo_dt" onclick="showHideInfo()">
-                                        <strong><i><img src="../../image/icon_gsjj.png"> </i> </strong>
+                                        <strong><i><img src="image/icon_gsjj.png"> </i> </strong>
                                         <span class="mycard_member_info11_con_bt">介绍：</span>
                                         <input id="emp_compInfoshow" hidden="hidden" value="湖南东晖耀建设有限公司（原“湖南省东晖园林工程有限公司”成立于2014年11月），具有资质类别及等级：施工总承包建筑工程贰级、专业承包建筑装修装饰工程贰级、施工总承包公路工程贰级、施工总承包水利水电工程贰级、施工总承包市政公用工程贰级、专业承包桥梁工程贰级、专业承包隧道工程贰级、专业承包钢结构工程贰级、专业承包公路路面工程贰级、专业承包公路路基工程贰级、专业承包河湖整治工程贰级、专业承包环保工程贰级；“路基路面养护乙级资质”、“桥梁养护乙级资质”、“交通安全设施养护资质”等。
  "/>  <!-- 公司介绍 -->
@@ -343,7 +343,7 @@
                       </span>
                                     </dt>
                                     <dt style="height: auto;" >
-                                        <strong><i><img src="../../image/icon_dz.png"> </i> </strong>
+                                        <strong><i><img src="image/icon_dz.png"> </i> </strong>
                                         <span class="mycard_member_info11_con_bt">地址：</span>
                                         <span id="emp-address" onclick="navigation('湖南省长沙市雨花区东塘街道金盆岭派出所星城旺座商厦','0','0')">
                           湖南省长沙市雨花区东塘街道金盆岭...
@@ -458,22 +458,22 @@
     <!-- 遍历所有的图文信息 -->
     <div class="contentBox">
         <a href="javascript:void(0);">
-            <img style="width: 100%;" src="../../image/image1.png">
+            <img style="width: 100%;" src="image/image1.png">
         </a>
     </div>
     <div class="contentBox">
         <a href="javascript:void(0);">
-            <img style="width: 100%;" src="../../image/image2.jpg">
+            <img style="width: 100%;" src="image/image2.jpg">
         </a>
     </div>
     <div class="contentBox">
         <a href="javascript:void(0);">
-            <img style="width: 100%;" src="../../image/image3.jpg">
+            <img style="width: 100%;" src="image/image3.jpg">
         </a>
     </div>
     <div class="contentBox">
         <a href="javascript:void(0);">
-            <img style="width: 100%;" src="../../image/image4.png">
+            <img style="width: 100%;" src="image/image4.png">
         </a>
     </div>
     <div class="contentBox">
@@ -712,7 +712,7 @@
         height: 10%;
         width: 100%;
         background-color: rgba(0,0,0,0.6);
-        background-image: url(../../cardplugin/banners/images/test.png);
+        background-image: url(cardplugin/banners/images/test.png);
         background-size: 10.27vw 10.27vw;
         background-repeat: no-repeat;
         background-position: 50% 50%;
@@ -729,12 +729,12 @@
     <nav>
         <ul class="top_menu">
             <li>
-                <a onclick="javascript:telPhone()"><img src="../../image/foot_ico2.png" /> <label>给我电话</label></a>
+                <a onclick="javascript:telPhone()"><img src="image/foot_ico2.png" /> <label>给我电话</label></a>
                 <input type="hidden" id="telMemberMobile" />
             </li>
-            <li><a href="javascript:leaveMessage()"><img src="../../image/foot_ico8.png" /><label>给我留言</label></a></li>
-            <li><a class="ui_pr" href="javascript:showewm()" id="ewmbtn"><img src="../../image/changeCard.png" /><label>名片二维码</label> </a> </li>
-            <li><a href="javascript:showsharebtn()" id="sharebtn"><img src="../../image/copyStyle.png" /><label>分享</label></a> </li>
+            <li><a href="javascript:leaveMessage()"><img src="image/foot_ico8.png" /><label>给我留言</label></a></li>
+            <li><a class="ui_pr" href="javascript:showewm()" id="ewmbtn"><img src="image/changeCard.png" /><label>名片二维码</label> </a> </li>
+            <li><a href="javascript:showsharebtn()" id="sharebtn"><img src="image/copyStyle.png" /><label>分享</label></a> </li>
         </ul>
     </nav>
 </section>
@@ -785,34 +785,34 @@
 </body>
 <!--分享-->	<!-- 微信内导航 -->
 <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-<script type="text/javascript" src="../../js/common/wechat_config.js"></script>
-<script type="text/javascript" src="../../cardplugin/share/share.js"></script>
+<script type="text/javascript" src="js/common/wechat_config.js"></script>
+<script type="text/javascript" src="cardplugin/share/share.js"></script>
 
-<script src="../../js/common/jquery.i18n.js" type="text/javascript" ></script>
+<script src="js/common/jquery.i18n.js" type="text/javascript" ></script>
 
 <!-- 导航 -->
-<script src='../../cardplugin/common/daohang.js' type="text/javascript"></script>
+<script src='cardplugin/common/daohang.js' type="text/javascript"></script>
 
 <!-- 日志记录处理 -->
-<script language="JavaScript" src="../../cardplugin/logutils/impact.js"></script>
-<script language="JavaScript" src="../../cardplugin/logutils/logrecord.js"></script>
+<script language="JavaScript" src="cardplugin/logutils/impact.js"></script>
+<script language="JavaScript" src="cardplugin/logutils/logrecord.js"></script>
 
 <!-- 留言 -->
-<script type="text/javascript" src="../../cardplugin/leavemessage/leavemessage.js"></script>
+<script type="text/javascript" src="cardplugin/leavemessage/leavemessage.js"></script>
 
 <!--做我的名片-->
-<script src="../../cardplugin/shitbtn/swiper.min.js"></script>
-<script src='../../cardplugin/shitbtn/swipe.custom.js'></script>
+<script src="cardplugin/shitbtn/swiper.min.js"></script>
+<script src='cardplugin/shitbtn/swipe.custom.js'></script>
 
 <!--二维码-->
-<script type="text/javascript" src="../../cardplugin/ewm/jquery.qrcode.min.js"></script>
-<script  type="text/javascript" src="../../cardplugin/ewm/generatorCode.js"></script>
+<script type="text/javascript" src="cardplugin/ewm/jquery.qrcode.min.js"></script>
+<script  type="text/javascript" src="cardplugin/ewm/generatorCode.js"></script>
 
 <!--悬浮栏主要样式-->
-<script  type="text/javascript" src="../../cardplugin/banners/banners.js?v=0.01"></script>
+<script  type="text/javascript" src="cardplugin/banners/banners.js?v=0.01"></script>
 
 <!-- layui 框架-->
-<script type="text/javascript" src="../../cardplugin/common/layui.all.js" charset="utf-8"></script>
+<script type="text/javascript" src="cardplugin/common/layui.all.js" charset="utf-8"></script>
 
 <script type="text/javascript" >
 
