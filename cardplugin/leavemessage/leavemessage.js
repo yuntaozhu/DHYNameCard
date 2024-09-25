@@ -31,7 +31,7 @@
 	var serpx ;
 	var berpx ;
 	var currentpath = getBasePath();
-	var appid ='wx4cc0ee7a85657baa';
+	var appid ='wx5b35fd7f45aa07fc';
 	var strKey = "memberid";
 	var storage = window.sessionStorage;
 	$(function(){
@@ -85,7 +85,7 @@
 	function getBasePath(){var curWwwPath = window.document.location.href;var pathName = window.document.location.pathname;var pos = curWwwPath.indexOf(pathName);var localhostPath = curWwwPath.substring(0, pos);var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);var basePath=localhostPath+projectName+"/";return basePath;};
 
     //storage.setItem('memberid','958d82ba-5b28-4bff-abd2-9a9e1bed8aae');//当前登录的人员id
-    
+
     //留言
 	function leaveMessage(){
 		var toUrl = '';
@@ -114,19 +114,19 @@
 
 		/*var membermy = storage.getItem(strKey);
 		//判断是否登录  1、已登录
-		if(membermy!=null&&membermy!=''&&membermy!=undefined){ 
+		if(membermy!=null&&membermy!=''&&membermy!=undefined){
 			hrefToLeaveMess(membermy,$("#tomemberid").val());
-        }else { 
+        }else {
         	//弹出输入手机号码验证
         	$('#leave_message_div').show();
         	$('#weui-mask').show();
         } */
 	}
-	
+
 	$('#weui-mask').on('click',function(){
 		hide_leavemessage();
 	})
-	
+
 	//留言弹出验证隐藏
 	function hide_leavemessage(){
 		$('#leave_message_div').hide();
@@ -134,7 +134,7 @@
         $('#user_phone').val('');
         $('#yzm').val('');
 	}
-	
+
 	//验证手机号码是否已经注册
 	function checkMoblie(){
 		$('#sendmsg').one("click",function(){
@@ -169,12 +169,12 @@
 			});
 		});
 	}
-	
-	
+
+
 	/**
 	 * 发送验证码
 	*/
-	
+
 	function sendyzm(type){
 		var param = {};
 		param.mobile=$("#user_phone").val().replace(/\s/g,'');
@@ -225,7 +225,7 @@
 	        setcountdown();
 	    },1000);
 	}
-	
+
 	//注册
 	function register_member(){
 		var param = gdj();
@@ -260,7 +260,7 @@
 			}
 		});
 	}
-		
+
 	//登录
 	function loginByMessage(){
 		var params = gdj();
@@ -296,7 +296,7 @@
 			}
 		});
 	}
-	
+
 	//确认
 	function confirmLogin(){
 		if(!$('#user_phone').val()){

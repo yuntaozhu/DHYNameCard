@@ -124,7 +124,7 @@ function paymentProduct(bpouiid,bpodaccount){
 function paymentonBridgeReady(){
     WeixinJSBridge.invoke(
         'getBrandWCPayRequest',{
-            "appId":appId,     //公众号名称，由商户传入
+            "appId":wx5b35fd7f45aa07fc,     //公众号名称，由商户传入
             "timeStamp":""+timeStamp,         //时间戳，自1970年以来的秒数
             "nonceStr":nonceStr, //随机串
             "package":"prepay_id="+prepayId,

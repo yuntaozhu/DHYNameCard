@@ -4,15 +4,15 @@
    */
  var $html_shareimg = '<div class="overlay" id="share_part" style="display:none">'+
                            '<div class="share_part">'+
-                           '<p><img src="../../cardplugin/share/share_pic.png"></p>'+
+                           '<p><img src="share_pic.png"></p>'+
                            '</div>'+
                            '</div>';
 $(function() {
     $('body').append($html_shareimg);
     var message = {};
     var shareInfo = $('#shareInfo').val();
-    var company_desc = '大商帮云名片，企业自媒体运营新高度，通过大商帮云名片企业将员工、代理商、客户、粉丝捆绑一起，企业可一键广播公司新产品、新动态、新技术，员工与代理商、客户、粉丝按需约见，快速成交。';
-    var mem_desc =  '大商帮云名片，企业自媒体运营新高度，通过大商帮云名片企业将员工、代理商、客户、粉丝捆绑一起，企业可一键广播公司新产品、新动态、新技术，员工与代理商、客户、粉丝按需约见，快速成交。'
+    var company_desc = '东晖耀， 建筑成功保障。';
+    var mem_desc =  '东晖耀。'
     $('#share_part').click(function(event){
        $('#share_part').toggle();
     });
@@ -36,7 +36,7 @@ $(function() {
             message.link = location.href.split('?')[0]+"?serviceurl="+ $("#bbgDomain").val();
         }
     }
-    message.imgUrl = "../../cardplugin/share/default_icon.png";
+    message.imgUrl = "default_icon.png";
     var share_img =  $('#mem_logo').val();
     share_img = share_img.trim();
     $.ajax({
@@ -44,7 +44,7 @@ $(function() {
         type: 'GET',
         complete: function(response){
             if(response.status == 404){
-                message.imgUrl = "../../cardplugin/share/default_icon.png";
+                message.imgUrl = "default_icon.png";
             }else{
                 message.imgUrl = share_img;
             }
